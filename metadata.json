@@ -1,0 +1,15 @@
+{
+  "name": "pmuller-strongswan",
+  "version": "0.1.0",
+  "author": "pmuller",
+  "summary": "Install and configure Strongswan.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/pmuller/puppet-strongswan.git",
+  "project_page": "https://github.com/pmuller/puppet-strongswan",
+  "issues_url": "https://github.com/pmuller/puppet-strongswan/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
