@@ -1,48 +1,61 @@
 # Class: strongswan
 # ===========================
 #
-# Full description of class strongswan here.
+# Install and configure strongswan.
 #
 # Parameters
 # ----------
 #
-# Document parameters here.
+# * `package_name`
+# The name of the strongswan package.
+# Defaults to 'strongswan'.
 #
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# * `package_ensure`
+# Any valid parameter passed to the ensure parameter of the package resource.
+# Defaults to 'installed'. Can be 'absent' or a specific version.
 #
-# Variables
-# ----------
+# * `conf_dir`
+# The base configuration directory.
+# Defaults should work on RedHat and Debian OS families.
 #
-# Here you should define a list of variables that this module would require.
+# * `service_name`
+# The name of the strongswan service.
+# Defaults should work on RedHat and Debian OS families.
 #
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
+# * `service_ensure`
+# Defaults to 'running'.
 #
 # Examples
 # --------
 #
 # @example
-#    class { 'strongswan':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
+#    class { 'strongswan': }
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Philippe Muller <philippe.muller@gmail.com>
 #
 # Copyright
 # ---------
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Philippe Muller
 #
-class strongswan {
+class strongswan (
 
+  $package_name = $strongswan::params::package_name,
+  $package_ensure = $strongswan::params::package_ensure,
+  $conf_dir = $strongswan::params::conf_dir,
+  $service_name = $strongswan::params::service_name,
+  $service_ensure = $strongswan::params::service_ensure,
+  $service_enable = $strongswan::params::service_enable,
+  $host_key_name = $strongswan::params::host_key_name,
+
+) inherits strongswan::params {
+
+  include strongswan::install
+  include strongswan::config
+  include strongswan::service
+  include strongswan::host_key
 
 }

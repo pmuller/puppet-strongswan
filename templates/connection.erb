@@ -1,0 +1,70 @@
+conn <%= @name %>
+    ikelifetime=<%= @ikelifetime %>
+    keylife=<%= @keylife %>
+    rekeymargin=<%= @rekeymargin %>
+    keyingtries=<%= @keyingtries %>
+    keyexchange=<%= @keyexchange %>
+<% if @mobike -%>
+    mobike=<%= @mobike %>
+<% end -%>
+<% if @left -%>
+    left=<%= @left %>
+<% end -%>
+<% if @leftcert -%>
+    leftcert=/etc/pki/tls/certs/<%= @leftcert %>.crt
+<% end -%>
+<% if @leftsendcert -%>
+    leftsendcert=<%= @leftsendcert %>
+<% end -%>
+<% if @leftid -%>
+    leftid=<%= @leftid %>
+<% end -%>
+<% if @leftauth -%>
+    leftauth=<%= @leftauth %>
+<% end -%>
+<% if @leftsubnet -%>
+    leftsubnet=<%= @leftsubnet %>
+<% end -%>
+<% if @leftsourceip -%>
+    leftsourceip=<%= @leftsourceip %>
+<% end -%>
+<% if @leftfirewall -%>
+    leftfirewall=<%= @leftfirewall %>
+<% end -%>
+<% if @right -%>
+    right=<%= @right %>
+<% end -%>
+<% if @rightdns -%>
+    rightdns=<%= @rightdns %>
+<% end -%>
+<% if @rightid -%>
+    rightid=<%= @rightid %>
+<% end -%>
+<% if @rightsubnet -%>
+    rightsubnet=<%= @rightsubnet %>
+<% end -%>
+<% if @rightsourceip -%>
+    rightsourceip=<%= @rightsourceip %>
+<% end -%>
+<% if @rightauth -%>
+    rightauth=<%= @rightauth %>
+<% end -%>
+<% if @rightauth2 -%>
+    rightauth2=<%= @rightauth2 %>
+<% end -%>
+<% if @type -%>
+    type=<%= @type %>
+<% end -%>
+<% if @auto -%>
+    auto=<%= @auto %>
+<% end -%>
+<% if @xauth -%>
+    xauth=<%= @xauth %>
+<% end -%>
+<% if @authby -%>
+    authby=<%= @authby %>
+<% end -%>
+<% if @dpdaction -%>
+    dpdaction=<%= @dpdaction %>
+<% end -%>
+
