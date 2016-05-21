@@ -18,7 +18,7 @@ define strongswan::secret (
 
   concat::fragment { "strongswan::secret::${name}":
     target  => "${strongswan::conf_dir}/ipsec.secrets",
-    content => inline_template("<%= @_name %>: <%= @type %> \"<%= @secret %>\"\n"),
+    content => inline_template("<%= @_name %> : <%= @type %> \"<%= @secret %>\"\n"),
     order   => $order;
   }
 
