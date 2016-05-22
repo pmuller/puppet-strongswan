@@ -1,0 +1,10 @@
+ca <%= @name %>
+    cacert=<%= @cacert %> 
+    auto=<%= @auto %> 
+<% if @crluri -%>
+    crluri=<%= @crluri %>
+<% end -%>
+<% if @ocspuri -%>
+    ocspuri=<%= @ocspuri %>
+<% end -%>
+
