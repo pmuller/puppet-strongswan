@@ -5,6 +5,11 @@ class strongswan::params {
   $package_name = 'strongswan'
   $package_ensure = 'installed'
 
+  $pki_dir = $::osfamily ? {
+    'RedHat' => '/etc/pki/tls',
+    'Debian' => '/etc/ssl',
+  }
+
   $conf_dir = $::osfamily ? {
     'RedHat' => '/etc/strongswan',
     'Debian' => '/etc',
