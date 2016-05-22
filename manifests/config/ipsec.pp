@@ -8,7 +8,8 @@ class strongswan::config::ipsec inherits strongswan::config {
     ensure => present,
     owner  => 'root',
     group  => 'root',
-    mode   => '0400';
+    mode   => '0400',
+    notify => Service[$service_name],
   }
 
   concat::fragment { 'strongswan::config::ipsec::header':

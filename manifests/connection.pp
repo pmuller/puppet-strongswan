@@ -37,7 +37,6 @@ define strongswan::connection (
     target  => "${strongswan::conf_dir}/ipsec.conf",
     content => template("${module_name}/connection.erb"),
     order   => $order,
-    notify  => Service[$strongswan::service_name];
   }
 
 }

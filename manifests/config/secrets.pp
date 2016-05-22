@@ -6,7 +6,8 @@ class strongswan::config::secrets inherits strongswan::config {
     ensure => present,
     owner  => 'root',
     group  => 'root',
-    mode   => '0400';
+    mode   => '0400',
+    notify => Service[$service_name],
   }
 
 }
