@@ -11,7 +11,7 @@ conn <%= @name %>
     left=<%= @left %>
 <% end -%>
 <% if @leftcert -%>
-  leftcert=<%= scope['strongswan::pki_dir'] %>/certs/<%= @leftcert %>.crt
+    leftcert=<%= scope['strongswan::pki_dir'] %>/certs/<%= @leftcert %>.crt
 <% end -%>
 <% if @leftsendcert -%>
     leftsendcert=<%= @leftsendcert %>
