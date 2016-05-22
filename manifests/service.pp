@@ -3,8 +3,11 @@
 class strongswan::service inherits strongswan {
 
   service { $service_name:
-    ensure => $service_running,
-    enable => $service_enable;
+    name       => $service_name,
+    ensure     => $service_ensure,
+    enable     => $service_enable,
+    hasstatus  => true,
+    hasrestart => true,
   }
 
 }
