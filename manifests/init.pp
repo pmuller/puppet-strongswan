@@ -46,6 +46,7 @@ class strongswan (
   $package_name = $strongswan::params::package_name,
   $package_ensure = $strongswan::params::package_ensure,
   $conf_dir = $strongswan::params::conf_dir,
+  $pki_dir = $strongswan::params::pki_dir,
   $service_name = $strongswan::params::service_name,
   $service_ensure = $strongswan::params::service_ensure,
   $service_enable = $strongswan::params::service_enable,
